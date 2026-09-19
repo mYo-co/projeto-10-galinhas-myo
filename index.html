@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#063b2b">
+<meta name="description" content="Projeto 10 Galinhas mYo — um método simples para aprender, organizar e começar uma pequena criação.">
+<title>Projeto 10 Galinhas | mYo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --green:#063b2b;--green2:#0b4a37;--gold:#d2a33f;--gold2:#efd07a;
+ --cream:#f5efe3;--paper:#fffdf7;--ink:#10251e;--muted:#65716b;
+ --red:#d43a32;--line:rgba(6,59,43,.13);
+ --shadow:0 22px 65px rgba(20,36,27,.14)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden;padding-bottom:96px}
+a{text-decoration:none;color:inherit}
+img,video{display:block;max-width:100%}
+.page{width:min(100%,780px);margin:auto}
+.top{padding:17px 18px 8px;text-align:center;color:var(--green);font-size:10px;font-weight:900;letter-spacing:.22em;text-transform:uppercase}
+.top span{color:var(--gold)}
+.hero{padding:8px 13px 22px}
+.hero-card{min-height:88vh;border-radius:30px;overflow:hidden;position:relative;background:var(--green);display:flex;align-items:flex-end;box-shadow:var(--shadow)}
+.hero-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-card:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(1,27,20,.97) 4%,rgba(1,27,20,.67) 42%,rgba(1,27,20,.12) 78%)}
+.hero-content{position:relative;z-index:2;color:#fff;padding:24px 22px 25px;width:100%}
+.pill{display:inline-flex;padding:9px 13px;border:1px solid rgba(239,208,122,.38);background:rgba(6,59,43,.55);border-radius:999px;color:var(--gold2);font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+.brand{font-family:"Playfair Display",serif;font-size:42px;line-height:1;margin:16px 0 7px}
+.brand small{display:block;font-family:"DM Sans";font-size:9px;letter-spacing:.2em;color:var(--gold2);text-transform:uppercase;margin-top:6px}
+h1,h2,h3{font-family:"Playfair Display",serif}
+h1{font-size:clamp(43px,11vw,76px);line-height:.9;letter-spacing:-.04em}
+h1 em{font-style:normal;color:var(--gold2)}
+.sub{font-size:15px;line-height:1.58;color:rgba(255,255,255,.9);margin-top:17px;max-width:610px}
+.cta{display:flex;align-items:center;justify-content:center;gap:9px;min-height:58px;padding:0 22px;border-radius:999px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#11251d;font-size:14px;font-weight:900;box-shadow:0 14px 32px rgba(0,0,0,.22);margin-top:20px}
+.micro{font-size:10px;color:rgba(255,255,255,.66);text-align:center;margin-top:9px}
+.section{padding:28px 17px}
+.kicker{color:var(--gold);font-size:10px;font-weight:900;letter-spacing:.19em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(32px,8vw,51px);line-height:1;letter-spacing:-.03em;color:var(--green)}
+.lead{font-size:15px;line-height:1.67;color:var(--muted);margin-top:13px}
+.problem{display:grid;gap:10px;margin-top:19px}
+.card{padding:20px;border-radius:22px;background:rgba(255,255,255,.58);border:1px solid rgba(255,255,255,.82);box-shadow:0 12px 35px rgba(20,36,27,.07)}
+.card strong{font-size:15px;display:block;margin-bottom:6px}.card p{font-size:13px;line-height:1.55;color:var(--muted)}
+.mechanism{margin:8px 16px 26px;border-radius:30px;background:var(--green);color:#fff;padding:31px 21px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.mechanism:after{content:"";position:absolute;width:250px;height:250px;border:1px solid rgba(239,208,122,.18);border-radius:50%;right:-130px;top:-100px}
+.mechanism>*{position:relative;z-index:1}
+.mechanism h2{color:#fff}
+.steps{display:grid;gap:10px;margin-top:20px}
+.step{display:flex;gap:13px;align-items:flex-start}
+.num{width:34px;height:34px;min-width:34px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--green);font-weight:900}
+.step strong{display:block;font-size:14px;margin-bottom:3px}.step p{font-size:12px;line-height:1.5;color:rgba(255,255,255,.7)}
+.receives{display:grid;gap:10px;margin-top:18px}
+.receive{display:flex;gap:12px;padding:17px;border-radius:20px;background:rgba(255,255,255,.58);border:1px solid rgba(6,59,43,.09)}
+.icon{width:35px;height:35px;min-width:35px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(198,154,58,.55);color:var(--gold);font-weight:900}
+.receive strong{font-size:14px}.receive p{font-size:12px;line-height:1.5;color:var(--muted);margin-top:4px}
+.image-card{margin-top:18px;padding:8px;border-radius:28px;background:#fff;box-shadow:var(--shadow)}
+.image-card img{width:100%;border-radius:22px}
+.bridge{text-align:center;padding:34px 20px}
+.bridge h2{max-width:620px;margin:auto}
+.bridge p{max-width:520px;margin:13px auto 0;color:var(--muted);font-size:14px;line-height:1.65}
+.offer{margin:10px 16px 24px;border-radius:30px;background:var(--green);color:#fff;padding:34px 21px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.offer:before{content:"";position:absolute;width:270px;height:270px;border:1px solid rgba(239,208,122,.18);border-radius:50%;right:-140px;top:-120px}
+.offer>*{position:relative;z-index:1}
+.offer h2{color:#fff}
+.price{font-family:"Playfair Display",serif;font-size:72px;line-height:1;color:var(--gold2);margin:16px 0 2px}
+.price small{font-family:"DM Sans";font-size:18px;color:#fff}
+.old{font-size:12px;color:rgba(255,255,255,.48)}
+.offer-note{max-width:500px;margin:14px auto 0;color:rgba(255,255,255,.75);font-size:13px;line-height:1.6}
+.offer .cta{width:100%;max-width:430px;margin-left:auto;margin-right:auto}
+.guarantee{margin-top:17px;padding:16px;border:1px solid rgba(239,208,122,.34);border-radius:18px;font-size:12px;line-height:1.55}
+.faq{border-top:1px solid var(--line);margin-top:18px}
+details{border-bottom:1px solid var(--line);padding:18px 3px}
+summary{list-style:none;cursor:pointer;font-weight:900;font-size:14px}
+summary::-webkit-details-marker{display:none}
+details p{padding-top:9px;color:var(--muted);font-size:13px;line-height:1.6}
+.note{margin:8px 16px 20px;padding:16px;border-radius:18px;background:rgba(255,255,255,.42);border:1px solid rgba(198,154,58,.35);color:#6d675c;font-size:11px;line-height:1.55}
+.final{text-align:center;padding:32px 18px 24px}
+.final p{max-width:500px;margin:11px auto;color:var(--muted);font-size:13px;line-height:1.6}
+.sticky{position:fixed;z-index:40;left:10px;right:10px;bottom:10px;padding:7px;border-radius:999px;background:rgba(6,59,43,.94);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(15px);box-shadow:0 16px 45px rgba(0,0,0,.28)}
+.sticky a{min-height:58px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#12261e;font-size:14px;font-weight:900}
+@media(min-width:700px){.hero{padding-left:24px;padding-right:24px}.section{padding-left:28px;padding-right:28px}.problem{grid-template-columns:1fr 1fr}.receives{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<main class="page">
+
+<div class="top">mYo <span>•</span> Cuida • Nutre • Vive</div>
+
+<section class="hero">
+  <div class="hero-card">
+    <img src="assets/hero.jpeg" alt="Projeto 10 Galinhas mYo">
+    <div class="hero-content">
+      <div class="pill">🐔 Comece pequeno • aprenda o processo</div>
+      <div class="brand">mYo <small>cuida • nutre • vive</small></div>
+      <h1>E se <em>10 galinhas</em> fossem o seu primeiro passo?</h1>
+      <p class="sub">Em vez de começar no escuro, tenha um caminho organizado para entender criação, custos, rotina e os primeiros passos de uma pequena produção.</p>
+      <a class="cta" href="https://checkout.escalepay.com/8783824">QUERO COMEÇAR COM MÉTODO →</a>
+      <div class="micro">Acesso digital • 397 MT • Garantia de 7 dias</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">O problema</div>
+  <h2>O difícil não é querer começar.</h2>
+  <p class="lead">É saber o que fazer primeiro — e evitar gastar tempo e dinheiro sem uma estrutura.</p>
+  <div class="problem">
+    <div class="card"><strong>❌ Informação espalhada</strong><p>Vídeos, dicas e opiniões diferentes podem deixar quem está a começar sem uma sequência clara.</p></div>
+    <div class="card"><strong>❌ Começar sem calcular</strong><p>Sem olhar para custos, rotina e recursos, fica mais difícil perceber o tamanho real do projecto.</p></div>
+    <div class="card"><strong>❌ Querer crescer cedo demais</strong><p>Antes de aumentar a criação, é importante entender o processo e testar a organização.</p></div>
+    <div class="card"><strong>❌ Adiar por falta de direção</strong><p>Quando o primeiro passo parece complicado, a ideia pode continuar apenas no papel.</p></div>
+  </div>
+</section>
+
+<section class="mechanism">
+  <div class="kicker">O mecanismo</div>
+  <h2>Transforme a ideia num plano de início.</h2>
+  <p style="margin-top:12px;color:rgba(255,255,255,.76);font-size:14px;line-height:1.65">O Projeto 10 Galinhas organiza o caminho para você estudar antes de executar.</p>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><strong>ENTENDER</strong><p>Conheça os fundamentos e os pontos que precisam de atenção.</p></div></div>
+    <div class="step"><div class="num">2</div><div><strong>CALCULAR</strong><p>Tenha uma visão mais clara dos custos e da estrutura inicial.</p></div></div>
+    <div class="step"><div class="num">3</div><div><strong>ORGANIZAR</strong><p>Use uma sequência simples para preparar a pequena criação.</p></div></div>
+    <div class="step"><div class="num">4</div><div><strong>COMEÇAR</strong><p>Coloque o conhecimento em prática de acordo com a sua realidade.</p></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="kicker">O que você recebe</div>
+  <h2>Um ponto de partida organizado.</h2>
+  <p class="lead">Conteúdo pensado para quem quer sair da intenção e começar a estruturar o projecto.</p>
+  <div class="receives">
+    <div class="receive"><div class="icon">🐔</div><div><strong>Guia do Projeto 10 Galinhas</strong><p>Conteúdo organizado para acompanhar os primeiros passos.</p></div></div>
+    <div class="receive"><div class="icon">₵</div><div><strong>Calculadora mYo</strong><p>Ferramenta para ajudar a visualizar custos e cenários.</p></div></div>
+    <div class="receive"><div class="icon">✓</div><div><strong>Checklists</strong><p>Listas práticas para não esquecer pontos importantes.</p></div></div>
+    <div class="receive"><div class="icon">30</div><div><strong>Plano de 30 dias</strong><p>Uma sequência para transformar o estudo em ação.</p></div></div>
+    <div class="receive"><div class="icon">↗</div><div><strong>Estratégia para começar pequeno</strong><p>Aprenda a pensar na evolução sem precisar começar grande.</p></div></div>
+    <div class="receive"><div class="icon">+</div><div><strong>Materiais complementares</strong><p>Recursos adicionais para apoiar a implementação.</p></div></div>
+  </div>
+
+  <div class="image-card">
+    <a href="https://checkout.escalepay.com/8783824">
+      <img src="assets/acesso-projeto-10-galinhas.png" alt="Acesso ao Projeto 10 Galinhas">
+    </a>
+  </div>
+</section>
+
+<section class="bridge">
+  <div class="kicker">A lógica é simples</div>
+  <h2>Não compre apenas informação. Compre um caminho.</h2>
+  <p>Você não precisa saber tudo hoje. Precisa saber qual é o próximo passo — e ter ferramentas para executá-lo.</p>
+  <a class="cta" href="https://checkout.escalepay.com/8783824">QUERO TER ACESSO →</a>
+</section>
+
+<section class="offer" id="oferta">
+  <div class="kicker">Acesso ao Projeto 10 Galinhas</div>
+  <h2>Comece pelo método.</h2>
+  <div class="price">397 <small>MT</small></div>
+  <div class="old">Acesso digital • pagamento único</div>
+  <p class="offer-note">Receba o conteúdo e as ferramentas para estudar, organizar e começar de acordo com a sua realidade.</p>
+  <a class="cta" href="https://checkout.escalepay.com/8783824">FAZER PARTE DO PROJETO →</a>
+  <div class="guarantee">🛡️ <strong>GARANTIA DE 7 DIAS</strong><br>Consulte as condições da garantia apresentadas no checkout.</div>
+</section>
+
+<section class="section">
+  <div class="kicker">Antes de decidir</div>
+  <h2>As perguntas que você provavelmente faria.</h2>
+  <div class="faq">
+    <details><summary>É um produto físico?</summary><p>Não. É um produto digital para consultar no telemóvel ou computador.</p></details>
+    <details><summary>Preciso já ter 10 galinhas?</summary><p>Não. O material foi pensado como ponto de partida educativo. A execução depende dos seus recursos e da sua realidade.</p></details>
+    <details><summary>Quando recebo o acesso?</summary><p>O acesso é disponibilizado após a confirmação do pagamento no checkout, conforme as condições apresentadas na compra.</p></details>
+    <details><summary>O projecto garante lucro?</summary><p>Não. O material é educativo. Resultados dependem de custos, manejo, saúde das aves, mercado e execução.</p></details>
+    <details><summary>Posso começar com menos?</summary><p>O conceito é começar pequeno e adaptar a execução à sua realidade. O conteúdo não substitui uma avaliação específica do seu contexto.</p></details>
+  </div>
+</section>
+
+<div class="note"><strong>Nota importante:</strong> este material é educativo e não promete lucro. Resultados podem variar conforme custos, manejo, saúde das aves, mercado e execução.</div>
+
+<section class="final">
+  <div class="kicker">mYo • Cuida • Nutre • Vive</div>
+  <h2>10 galinhas podem ser um começo.</h2>
+  <p>Aprenda o processo, organize os primeiros passos e veja como estruturar a sua pequena criação.</p>
+  <a class="cta" href="https://checkout.escalepay.com/8783824">QUERO COMEÇAR →</a>
+</section>
+
+</main>
+
+<div class="sticky">
+  <a href="https://checkout.escalepay.com/8783824">ACESSO AO PROJETO 10 GALINHAS — 397 MT →</a>
+</div>
+</body>
+</html>
